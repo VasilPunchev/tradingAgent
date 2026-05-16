@@ -17,24 +17,26 @@ export function Header() {
           </div>
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm font-medium text-white/45 md:flex">
-          <a href="#dashboard" className="transition hover:text-white">
-            Dashboard
-          </a>
-          <a href="#signals" className="transition hover:text-white">
-            Signals
-          </a>
-          <a href="#risk" className="transition hover:text-white">
-            Risk
-          </a>
-        </nav>
+        <div className="flex items-center gap-8">
+          <nav className="hidden items-center gap-7 text-sm font-medium text-white/45 md:flex">
+            <a href="#dashboard" className="transition hover:text-white">
+              Dashboard
+            </a>
+            <a href="#signals" className="transition hover:text-white">
+              Signals
+            </a>
+            <a href="#risk" className="transition hover:text-white">
+              Risk
+            </a>
+          </nav>
 
-        <a
-          href="#dashboard"
-          className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:-translate-y-0.5 hover:bg-white/90 sm:px-5 sm:text-sm"
-        >
-          Open dashboard
-        </a>
+          <a
+            href="#dashboard"
+            className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:-translate-y-0.5 hover:bg-white/90 sm:px-5 sm:text-sm"
+          >
+            Open dashboard
+          </a>
+        </div>
       </div>
     </header>
   );
