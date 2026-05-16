@@ -1,0 +1,88 @@
+import { AIAssistant } from "./AIAssistant";
+import { MarketOverview } from "./MarketOverview";
+import { RiskPanel } from "./RiskPanel";
+import { SignalCards } from "./SignalCards";
+import { Watchlist } from "./Watchlist";
+
+export function Dashboard() {
+  return (
+    <section id="dashboard" className="relative z-10 px-6 pt-36 pb-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div>
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-white/55 backdrop-blur-xl">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.8)]" />
+              AI-powered trading research dashboard
+            </div>
+
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.06em] text-white md:text-7xl">
+              Track signals.
+              <br />
+              <span className="bg-gradient-to-r from-cyan-200 via-emerald-200 to-white bg-clip-text text-transparent">
+                Manage risk with AI.
+              </span>
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/50">
+              TradingAgent AI helps traders review market signals, sentiment,
+              watchlists and portfolio risk in one clean research workspace.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl">
+            <p className="text-xs uppercase tracking-[0.2em] text-white/35">
+              Market status
+            </p>
+            <p className="mt-2 text-sm font-semibold text-emerald-300">
+              Research mode active
+            </p>
+          </div>
+        </div>
+
+        <MarketOverview />
+
+        <div className="mt-4 grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
+          <Watchlist />
+
+          <RiskPanel />
+        </div>
+
+        <div className="mt-4 grid gap-4 xl:grid-cols-[0.9fr_1.1fr]">
+          <SignalCards />
+
+          <div className="space-y-4">
+            <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.05] p-6 shadow-xl shadow-black/20 backdrop-blur-xl">
+              <div className="mb-5 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-cyan-300">
+                    Performance chart
+                  </p>
+                  <h2 className="mt-1 text-2xl font-semibold tracking-tight text-white">
+                    Weekly momentum
+                  </h2>
+                </div>
+
+                <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">
+                  +8.2%
+                </span>
+              </div>
+
+              <div className="flex h-64 items-end gap-3 rounded-2xl border border-white/10 bg-black/20 p-4">
+                {[38, 52, 45, 68, 61, 78, 88].map((height, index) => (
+                  <div key={index} className="flex flex-1 items-end">
+                    <div
+                      className="w-full rounded-t-xl bg-gradient-to-t from-cyan-500/60 to-emerald-300"
+                      style={{ height: `${height}%` }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <AIAssistant />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
