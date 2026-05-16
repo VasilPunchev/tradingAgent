@@ -20,7 +20,7 @@ export function Watchlist() {
         {watchlist.map((stock) => (
           <div
             key={stock.symbol}
-            className="grid grid-cols-[0.8fr_1.2fr_0.8fr_0.8fr] items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4 py-3"
+            className="grid gap-3 rounded-2xl border border-white/10 bg-black/20 px-4 py-4 sm:grid-cols-[0.8fr_1.2fr_0.8fr_0.8fr] sm:items-center sm:py-3"
           >
             <div>
               <p className="text-sm font-semibold text-white">{stock.symbol}</p>
